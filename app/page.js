@@ -21,7 +21,7 @@ export default function Home() {
         initial={{ y: 1000, scale: 0.2, opacity: 0 }}
         animate={{ y: 0, opacity: 1, scale: 1 }}
         transition={{ duration: 0.3 }}
-        className="grid grid-cols-2 divide-x-4 divide-y-4 text-sm md:text-xl place-items-center w-10/12 md:w-2/5 gap-7"
+        className="grid grid-cols-2 divide-x-4 divide-y-4 text-sm md:text-xl gap-2 place-items-center w-10/12 md:w-2/5 md:gap-7"
       >
         <motion.div className="w-full" whileHover={{ scale: 1.2 }}>
           <Paper elevation={24}>
@@ -31,8 +31,8 @@ export default function Home() {
             </div>
           </Paper>
         </motion.div>
-        <motion.div className="w-full" whileHover={{ scale: 1.2 }}>
-          <Paper elevation={24}>
+        <motion.div className="w-full h-full" whileHover={{ scale: 1.2 }}>
+          <Paper className="h-full" elevation={24}>
             <div className="  p-5 space-y-3 flex flex-col">
               <span className=" text-slate-500">Total Exchanges</span>
               <span className="font-semibold">
@@ -61,8 +61,8 @@ export default function Home() {
             </div>
           </Paper>
         </motion.div>
-        <motion.div className="w-full" whileHover={{ scale: 1.2 }}>
-          <Paper elevation={24}>
+        <motion.div className="w-full h-full" whileHover={{ scale: 1.2 }}>
+          <Paper className="h-full" elevation={24}>
             <div className="  p-5 space-y-3 flex flex-col">
               <span className=" text-slate-500">Total Markets</span>
               <span className="font-semibold">
