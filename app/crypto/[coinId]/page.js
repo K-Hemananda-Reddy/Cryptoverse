@@ -17,6 +17,7 @@ import GppMaybeOutlinedIcon from "@mui/icons-material/GppMaybeOutlined";
 import { Autocomplete, Paper, TextField } from "@mui/material";
 import LineChart from "@/components/LineChart";
 import { useGetCryptoHistoryQuery } from "@/services/cryptoApi";
+import Loader from "@/components/Loader";
 
 const page = ({ params }) => {
   const {coinId}=params
@@ -24,7 +25,7 @@ const page = ({ params }) => {
   const { data, isFetching } = useGetCryptoDetailsQuery(params.coinId);
   const {data:coinHistory}=useGetCryptoHistoryQuery({coinId,timePeriod})
   console.log(data);
-  if (isFetching) return "Loading";
+  if (isFetching) return <Loader/>;
   const cryptoDetails = data?.data?.coin;
   const time = ["3h", "24h", "7d", "30d", "1y", "3m", "3y", "5y"];
 

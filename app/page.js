@@ -7,11 +7,12 @@ import millify from "millify";
 import Link from "next/link";
 import CryptoCurrencies from "@/components/CryptoCurrencies";
 import CryptoNews from "@/components/CryptoNews";
+import Loader from "@/components/Loader";
 
 export default function Home() {
   const { data, isFetching } = useGetCryptosQuery(10);
   const globalStats = data?.data?.stats;
-  if (isFetching) return "Loading ...";
+  if (isFetching) return <Loader/>;
   return (
     <div className="flex justify-center flex-col items-center">
       <div className="uppercase font-bold text-2xl tracking-wider text-center my-8">

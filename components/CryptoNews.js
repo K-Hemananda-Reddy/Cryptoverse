@@ -5,6 +5,7 @@ import Image from "next/image";
 import crpimg from "../images/img.png";
 import moment from "moment/moment";
 import { useGetCryptosQuery } from "@/services/cryptoApi";
+import Loader from "./Loader";
 
 const CryptoNews = ({ simplified }) => {
     const [category,setCategory]=useState('Cryptocurrency')
@@ -16,7 +17,7 @@ const CryptoNews = ({ simplified }) => {
     newsCategory: category,
     count: simplified ? 6 : 12,
   });
-  if (isFetching) return "Loading...";
+  if (isFetching) return <Loader/>;
   return (
     <div>
       {!simplified && (

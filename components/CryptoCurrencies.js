@@ -6,6 +6,7 @@ import millify from "millify";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import Loader from "./Loader";
 
 const CryptoCurrencies = ({ simplified }) => {
   const count = simplified ? 10 : 100;
@@ -18,7 +19,7 @@ const CryptoCurrencies = ({ simplified }) => {
     const newData= data?.data?.coins.filter((coin)=>coin.name.toLowerCase().includes(search.toLowerCase()))
     setCryptos(newData)
   },[data,search])
-  if (isFetching) return "Loading";
+  if (isFetching) return <Loader/>;
 
   return (
     <div>
