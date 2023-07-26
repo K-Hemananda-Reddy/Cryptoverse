@@ -28,6 +28,7 @@ const LineChart = ({coinHistory,currentPrice,coinName}) => {
     }
 
     const options={
+        aspectRatio:1,
         scales:{
             yAxes:[
                 {
